@@ -4,7 +4,9 @@ const { createApp } = Vue
     data() {
       return {
         
-        emails: []
+        emails: [],
+
+        allEmails: false
       }
     },
 
@@ -16,6 +18,10 @@ const { createApp } = Vue
             .get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then((res) => {
                 this.emails.push(res.data.response)
+
+                if(this.emails.length === 10){
+                    this.allEmails = true
+                }
             })
         }
     },

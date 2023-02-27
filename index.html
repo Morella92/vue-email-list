@@ -11,9 +11,9 @@
 <body>
     
     <div id="app">
-        <ul>
-            <li v-for="(email, index) in emails" :key="index">{{ email }}>
-
+        <ul v-if="allEmails">
+            <li 
+            v-for="(email, index) in emails" :key="index">{{ email }}>
             </li>
         </ul>
 
